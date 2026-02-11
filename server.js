@@ -2023,13 +2023,23 @@ async function startServer() {
     console.log("💎 Gemini API endpoints ready");
     console.log("🔄 Gemini market trades WebSocket broadcasting enabled");
   });*/
-    server.listen(3002, () => {
+    /*server.listen(3002, () => {
     console.log("🚀 Backend running on port 3002");
     console.log("📊 Models initialized:", MODELS.map(m => m.name).join(", "));
     console.log("💰 Crypto prices initialized:", CRYPTO_SYMBOLS.map(c => `${c.symbol}: $${c.startPrice}`).join(", "));
     console.log("💎 Gemini API endpoints ready");
     console.log("🔄 Gemini market trades WebSocket broadcasting enabled");
-  }); 
+  }); */
+  const PORT = process.env.PORT || 3002;
+
+  server.listen(PORT, () => {
+    console.log(`🚀 Backend running on port ${PORT}`);
+    console.log("📊 Models initialized:", MODELS.map(m => m.name).join(", "));
+    console.log("💰 Crypto prices initialized:", CRYPTO_SYMBOLS.map(c => `${c.symbol}: $${c.startPrice}`).join(", "));
+    console.log("💎 Gemini API endpoints ready");
+    console.log("🔄 Gemini market trades WebSocket broadcasting enabled");
+  });
+
 }
 
 startServer();
